@@ -3,7 +3,6 @@
   import Projects from './Projects.vue'
   import Contact from './Contact.vue'
   import { ref } from 'vue'
-  const count = ref(0)
   const views = {
     Home,
     Projects,
@@ -13,13 +12,14 @@
 </script>
 
 <template>
-  <nav>
-    <div>nate</div>
+  <nav class='soft-pad'>
+    <div>Logo</div>
     <div class='items'>
       <button
       v-for='(_,view) in views'
       :key='view'
-      @click='currentView = view'>
+      @click='currentView = view'
+      :class='{currentViewBtn: currentView === view}'>
         {{view}}
       </button>
     </div>
@@ -28,7 +28,7 @@
     <keepalive>
       <component 
       :is='views[currentView]'
-      class='view'/>
+      class='view soft-pad'/>
     </keepalive>
   </main>
 </template>
@@ -41,6 +41,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: Helvetica, Sans-serif;
+  background: #fcfcfc;
 }
 #app{
   width: 100vw;
@@ -49,23 +50,38 @@ body{
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 9fr;
 }
+.soft-pad{
+  padding: 0 clamp(2rem,  15vw, 20rem);
+}
 nav{
+  background: #fff;
   position: sticky;
   top:0;
   display: grid;
   grid-template-columns: 7fr 3fr;
   justify-content: space-between;
   align-content: center;
-  padding: 0 2rem;
-  border-bottom: 1px solid #191919;
+  box-shadow: 0 -2em 5em 0 #00000062;
 }
 nav .items{
   display: flex;
   justify-content: space-between;
 }
+.items button{
+  appearance: none;
+  border: none;
+  background: transparent;
+  font:inherit;
+}
+.items button:hover{
+  color: #01009f;
+  cursor: pointer;
+  
+}
+nav .items .currentViewBtn{
+  color: #f4e;
+}
 .view{
-  padding: 0 2em;
-  border: dashed 1px black;
   height: 100%;
 }
 </style>
