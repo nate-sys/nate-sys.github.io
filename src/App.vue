@@ -1,31 +1,42 @@
 <script setup>
   import Home from './Home.vue'
+  import Projects from './Projects.vue'
+  import Contact from './Contact.vue'
   import { ref } from 'vue'
   const count = ref(0)
   const views = {
-    Home
+    Home,
+    Projects,
+    Contact
   }
-  const currentView = ref(views.Home)
+  const currentView = ref('Home')
 </script>
 
 <template>
   <nav>
     <div>nate</div>
     <div class='items'>
-      <button>projects</button>
-      <button>contact</button>
+      <button
+      v-for='(_,view) in views'
+      :key='view'
+      @click='currentView = view'>
+        {{view}}
+      </button>
     </div>
   </nav>
   <main>
     <keepalive>
       <component 
-      :is='currentView'
+      :is='views[currentView]'
       class='view'/>
     </keepalive>
   </main>
 </template>
 
 <style>
+*{
+  box-sizing: border-box;
+}
 body{
   margin: 0;
   padding: 0;
@@ -36,6 +47,7 @@ body{
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr 9fr;
 }
 nav{
   position: sticky;
@@ -45,7 +57,6 @@ nav{
   justify-content: space-between;
   align-content: center;
   padding: 0 2rem;
-  height: 8vh;
   border-bottom: 1px solid #191919;
 }
 nav .items{
@@ -53,7 +64,8 @@ nav .items{
   justify-content: space-between;
 }
 .view{
-  width: 100%;
   padding: 0 2em;
+  border: dashed 1px black;
+  height: 100%;
 }
 </style>

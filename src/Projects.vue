@@ -1,5 +1,5 @@
 <template>
   <div>
-  you are in Home
+  you are in Projects
   </div>
 </template>

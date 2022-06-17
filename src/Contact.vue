@@ -1,5 +1,5 @@
 <template>
   <div>
-  you are in Home
+  you are in Contacts
   </div>
 </template>
