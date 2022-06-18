@@ -30,17 +30,24 @@
   gap: 1vw;
 }
 .btn{
-  height: 2.5rem;
+  height: 3rem;
   appearance: none;
   border: none;
-  border-radius: 1.5ch;
-  padding: 1ch 4ch;
+  border-radius: 2rem;
+  padding: .3rem 1.3rem;
   cursor: pointer;
+  display: grid;
+  place-content: center;
+  
 }
 .btn-cta{
   background: #fe65f5;
   color: #fff;
   font-weight: bold;
+}
+.btn-cta:hover{
+  background: #8d4;
+
 }
 .btn-contact{
   color: #fe65f5;

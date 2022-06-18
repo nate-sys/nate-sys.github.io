@@ -54,21 +54,16 @@ body{
   padding: 0 clamp(2rem,  15vw, 20rem);
 }
 nav{
-  /*
-  background: #fff;
-  */
   position: sticky;
   top:0;
-  display: grid;
-  grid-template-columns: 7fr 3fr;
+  display: flex;
   justify-content: space-between;
-  align-content: center;
-  /*
+  align-items: center;
   box-shadow: 0 -2em 5em 0 #00000062;
-  */
 }
 nav .items{
   display: flex;
+  width: clamp(15rem, 30vw, 720px );
   justify-content: space-between;
 }
 .items button{
