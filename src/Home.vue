@@ -1,10 +1,10 @@
 <template>
   <div class='container'>
     <h1>
-    Hey, there :) 
+    Nathan Dawit
     </h1>
     <p>
-    My name is Nathan Dawit and I am a computer science student. I am looking for opportunities in <span> Web developement </span> and <span> UI/UX design </span>.
+    My name is Nathan Dawit, and I am a computer science student looking for opportunities in web development and UI/UX.
     </p>
     <div class='container-cta'>
       <button class='btn btn-cta'>
@@ -22,7 +22,7 @@
   align-content: center;
 }
 .container span {
-  color: #0424e6;
+  color: #f39;
   font-weight: bold;
 }
 .container-cta{
