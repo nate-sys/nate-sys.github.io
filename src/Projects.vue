@@ -7,6 +7,6 @@
 .container{
   display: grid;
   place-content: center;
-  color: #888;
+  color: var(--secfg);
 }
 </style>

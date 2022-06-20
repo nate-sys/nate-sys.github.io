@@ -27,29 +27,20 @@ a{
   transition: all 0.1s ease;
   text-decoration: none;
   gap: 1ch;
-  color: #111;
+  color: var(--primfg);
   padding: .5rem 1rem;
   border-radius: 2rem;
 }
 a:hover{
   transform: scale(1.1);
-  background: #fff;
+  background: var(--accentbg);
   box-shadow: 0 0 0.5em 0 #0004;
-  color: #fff;
-}
-#email:hover{
-    background: red;
-}
-#telegram:hover{
-  background: blue;
-}
-#github:hover{
-  background: purple;
+  color: var(--pribg);
 }
 svg{
   transition: 0.1s ease
 }
 a:hover svg{
-  fill: #fff;
+  fill: var(--pribg);
 }
 </style>

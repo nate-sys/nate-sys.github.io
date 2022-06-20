@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <nav class='soft-pad'>
+  <nav class='soft-pad colors'>
     <div>Logo</div>
     <div class='items'>
       <button
@@ -24,7 +24,7 @@
       </button>
     </div>
   </nav>
-  <main>
+  <main class='colors'>
     <keepalive>
       <component 
       :is='views[currentView]'
@@ -41,7 +41,6 @@ body{
   margin: 0;
   padding: 0;
   font-family: Helvetica, Sans-serif;
-  background: #fcfcfc;
 }
 #app{
   width: 100vw;
@@ -49,6 +48,14 @@ body{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 9fr;
+  --pribg: #fff;
+  --secbg: #fcfcfc;
+  --accentbg: #49e;
+  --prifg: #000;
+  --secfg: #888;
+  --accentfg: #49e;
+  background: var(--secbg);
+  color: var(--primbg);
 }
 .soft-pad{
   padding: 0 clamp(2rem,  15vw, 20rem);
@@ -71,14 +78,16 @@ nav .items{
   border: none;
   background: transparent;
   font:inherit;
+  color: var(--secfg);
 }
 .items button:hover{
-  color: #01009f;
+  color: var(--primfg);
   cursor: pointer;
   
 }
 nav .items .currentViewBtn{
-  color: #f4e;
+  color: var(--accentfg);
+  font-weight: bold;
 }
 .view{
   height: 100%;

@@ -21,10 +21,6 @@
   display: grid;
   align-content: center;
 }
-.container span {
-  color: #f39;
-  font-weight: bold;
-}
 .container-cta{
   display: flex;
   gap: 1vw;
@@ -41,16 +37,15 @@
   
 }
 .btn-cta{
-  background: #fe65f5;
-  color: #fff;
+  background: var(--accentbg);
+  color: var(--pribg);
   font-weight: bold;
 }
 .btn-cta:hover{
-  background: #8d4;
-
+  box-shadow: 0 0 .3em 0 #00000022;
 }
 .btn-contact{
-  color: #fe65f5;
+  color: var(--accentfg);
   font-weight: bold;
   background: transparent;
 }
