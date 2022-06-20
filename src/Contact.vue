@@ -38,7 +38,8 @@ a:hover{
   color: var(--pribg);
 }
 svg{
-  transition: 0.1s ease
+  transition: 0.1s ease;
+  fill: var(--prifg);
 }
 a:hover svg{
   fill: var(--pribg);

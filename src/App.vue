@@ -2,18 +2,42 @@
   import Home from './Home.vue'
   import Projects from './Projects.vue'
   import Contact from './Contact.vue'
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
   const views = {
     Home,
     Projects,
     Contact
   }
+  const night = ref(false)
+  const colors = computed(
+    ()=>{
+      return night.value ? {
+        '--pribg':'#fff',
+        '--secbg': '#fcfcfc',
+        '--accentbg': '#49e',
+        '--prifg': '#000',
+        '--secfg': '#888',
+        '--accentfg': '#49e'
+      }:{
+        '--pribg':'#121212',
+        '--secbg': '#333',
+        '--accentbg': '#49e',
+        '--prifg': '#fff',
+        '--secfg': '#eef',
+        '--accentfg': '#49e'
+      }
+    }
+  )
+  const changeColors = () => {
+    night.value = !night.value
+  }
   const currentView = ref('Home')
 </script>
 
 <template>
+  <div class='master-container' :style='colors'>
   <nav class='soft-pad colors'>
-    <div>Logo</div>
+    <div>nate-sys</div>
     <div class='items'>
       <button
       v-for='(_,view) in views'
@@ -21,6 +45,9 @@
       @click='currentView = view'
       :class='{currentViewBtn: currentView === view}'>
         {{view}}
+      </button>
+      <button @click ='changeColors' class='btn-theme'>
+        Theme
       </button>
     </div>
   </nav>
@@ -31,18 +58,19 @@
       class='view soft-pad'/>
     </keepalive>
   </main>
+  </div>
 </template>
 
 <style>
 *{
   box-sizing: border-box;
 }
-body{
+body, #app{
   margin: 0;
   padding: 0;
   font-family: Helvetica, Sans-serif;
 }
-#app{
+.master-container{
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -55,12 +83,13 @@ body{
   --secfg: #888;
   --accentfg: #49e;
   background: var(--secbg);
-  color: var(--primbg);
+  color: var(--prifg);
 }
 .soft-pad{
   padding: 0 clamp(2rem,  15vw, 20rem);
 }
 nav{
+  background: var(--secbg);
   position: sticky;
   top:0;
   display: flex;
@@ -87,9 +116,15 @@ nav .items{
 }
 nav .items .currentViewBtn{
   color: var(--accentfg);
-  font-weight: bold;
 }
 .view{
   height: 100%;
+}
+nav .items .btn-theme{
+  background: var(--accentbg);
+  color: #fff;
+  border-radius: 2ch;
+  padding: 0 1ch;
+  margin: 0 0 0 2ch;
 }
 </style>

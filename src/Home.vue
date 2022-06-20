@@ -38,7 +38,7 @@
 }
 .btn-cta{
   background: var(--accentbg);
-  color: var(--pribg);
+  color: #fff;
   font-weight: bold;
 }
 .btn-cta:hover{
