@@ -11,7 +11,7 @@
   const night = ref(false)
   const colors = computed(
     ()=>{
-      return night.value ? {
+      return !night.value ? {
         '--pribg':'#fff',
         '--secbg': '#fcfcfc',
         '--accentbg': '#49e',
