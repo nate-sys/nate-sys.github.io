@@ -21,6 +21,9 @@
   display: grid;
   align-content: center;
 }
+h1{
+  color: var(--primfg);
+}
 .container-cta{
   display: flex;
   gap: 1vw;

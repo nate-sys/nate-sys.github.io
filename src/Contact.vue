@@ -34,14 +34,13 @@ a{
 a:hover{
   transform: scale(1.1);
   background: var(--accentbg);
-  box-shadow: 0 0 0.5em 0 #0004;
-  color: var(--pribg);
+  color: #fff;
 }
 svg{
   transition: 0.1s ease;
   fill: var(--prifg);
 }
 a:hover svg{
-  fill: var(--pribg);
+  fill: #fff;
 }
 </style>

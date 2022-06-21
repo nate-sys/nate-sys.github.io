@@ -12,19 +12,19 @@
   const colors = computed(
     ()=>{
       return !night.value ? {
-        '--pribg':'#fff',
-        '--secbg': '#fcfcfc',
+        '--pribg':'#fcfcff',
+        '--secbg': '#f7f7fc',
         '--accentbg': '#49e',
-        '--prifg': '#000',
-        '--secfg': '#888',
+        '--prifg': '#0c0c5f',
+        '--secfg': '#88a',
         '--accentfg': '#49e'
       }:{
-        '--pribg':'#121212',
-        '--secbg': '#333',
-        '--accentbg': '#49e',
-        '--prifg': '#fff',
+        '--pribg':'#121418',
+        '--secbg': '#334',
+        '--accentbg': '#69c',
+        '--prifg': '#ececff',
         '--secfg': '#eef',
-        '--accentfg': '#49e'
+        '--accentfg': '#69c'
       }
     }
   )
@@ -37,7 +37,7 @@
 <template>
   <div class='master-container' :style='colors'>
   <nav class='soft-pad colors'>
-    <button class='btn' @click="()=> currentView ='Home'">nate-sys</button>
+    <button class='btn' @click="()=> currentView ='Home'"><span>./</span>nate<span>-sys</span></button>
     <div class='items'>
       <button
       v-for='(_,view) in views'
@@ -77,7 +77,7 @@ body, #app{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 9fr;
-  --pribg: #fff;
+  --pribg: #fcfcff;
   --secbg: #fcfcfc;
   --accentbg: #49e;
   --prifg: #000;
@@ -96,12 +96,18 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 -2em 5em 0 #00000062;
 }
 nav .items{
   display: flex;
-  width: clamp(15rem, 30vw, 720px );
+  width: 20rem ;
   justify-content: space-between;
+}
+nav button{
+  font-weight: bold;
+}
+button span{
+  color: var(--secfg);
+  font-weight: normal;
 }
 .items button, nav button{
   appearance: none;
@@ -109,6 +115,7 @@ nav .items{
   background: transparent;
   font:inherit;
   color: var(--prifg);
+  height: 3.5ch;
 }
 .items button:hover{
   color: var(--secfg);
@@ -122,8 +129,9 @@ nav .items .currentViewBtn{
   height: 100%;
 }
 nav .items .btn-theme{
-  background: var(--accentbg);
-  color: #fff;
+  background: transparent;
+  color: var(--accentfg);
+  border: .25ch solid var(--accentfg);
   border-radius: 2ch;
   padding: 0 1ch;
   margin: 0 0 0 2ch;
@@ -134,7 +142,7 @@ p{
 }
 .v-enter-active,
 .v-leave-active{
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-out;
 }
 .v-enter-from,
 .v-leave-to{
