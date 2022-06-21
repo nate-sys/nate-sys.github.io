@@ -10,8 +10,8 @@
       <button class='btn btn-cta'>
       Download CV
       </button>
-      <button class='btn btn-contact'>
-      Get in touch
+      <button class='btn btn-contact' @click="$emit('contactEmit')">
+        Get in touch
       </button>
     </div>
   </div>

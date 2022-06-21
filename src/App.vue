@@ -37,7 +37,7 @@
 <template>
   <div class='master-container' :style='colors'>
   <nav class='soft-pad colors'>
-    <div>nate-sys</div>
+    <button class='btn' @click="()=> currentView ='Home'">nate-sys</button>
     <div class='items'>
       <button
       v-for='(_,view) in views'
@@ -52,11 +52,12 @@
     </div>
   </nav>
   <main class='colors'>
-    <keepalive>
+    <Transition>
       <component 
       :is='views[currentView]'
-      class='view soft-pad'/>
-    </keepalive>
+      class='view soft-pad'
+      @contact-emit="()=>currentView='Contact'"/>
+    </Transition>
   </main>
   </div>
 </template>
@@ -102,7 +103,7 @@ nav .items{
   width: clamp(15rem, 30vw, 720px );
   justify-content: space-between;
 }
-.items button{
+.items button, nav button{
   appearance: none;
   border: none;
   background: transparent;
