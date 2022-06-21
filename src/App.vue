@@ -108,10 +108,10 @@ nav .items{
   border: none;
   background: transparent;
   font:inherit;
-  color: var(--secfg);
+  color: var(--prifg);
 }
 .items button:hover{
-  color: var(--primfg);
+  color: var(--secfg);
   cursor: pointer;
   
 }
@@ -127,6 +127,10 @@ nav .items .btn-theme{
   border-radius: 2ch;
   padding: 0 1ch;
   margin: 0 0 0 2ch;
+}
+p{
+  color: var(--secfg);
+  margin-bottom: 2rem;
 }
 .v-enter-active,
 .v-leave-active{
