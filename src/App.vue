@@ -15,8 +15,8 @@
         '--pribg':'#fcfcff',
         '--secbg': '#f7f7fc',
         '--accentbg': '#49e',
-        '--prifg': '#0c0c5f',
-        '--secfg': '#88a',
+        '--prifg': '#0c0c1f',
+        '--secfg': '#445',
         '--accentfg': '#49e'
       }:{
         '--pribg':'#121418',
