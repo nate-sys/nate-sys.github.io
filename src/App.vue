@@ -52,7 +52,7 @@
     </div>
   </nav>
   <main class='colors'>
-    <Transition>
+    <Transition mode='out-in'>
       <component 
       :is='views[currentView]'
       class='view soft-pad'
@@ -127,5 +127,18 @@ nav .items .btn-theme{
   border-radius: 2ch;
   padding: 0 1ch;
   margin: 0 0 0 2ch;
+}
+.v-enter-active,
+.v-leave-active{
+  transition: all 0.4s ease-out;
+}
+.v-enter-from,
+.v-leave-to{
+  transform: translateY(10vh);
+  opacity: 0;
+}
+.v-enter-to,
+.v-leave-from{
+  opacity: 1;
 }
 </style>
