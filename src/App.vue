@@ -19,7 +19,7 @@
         '--secfg': '#445',
         '--accentfg': '#49e'
       }:{
-        '--pribg':'#121418',
+        '--pribg':'#12121f',
         '--secbg': '#334',
         '--accentbg': '#69c',
         '--prifg': '#ececff',

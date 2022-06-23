@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 4vw;
 }
 a{
   display: flex;
