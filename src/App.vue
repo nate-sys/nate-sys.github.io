@@ -3,12 +3,14 @@
   import Projects from '@/components/views/Projects.vue'
   import Contact from '@/components/views/Contact.vue'
   import NotFound from '@/components/views/NotFound.vue'
-  import { ref, computed } from 'vue'
+  import { ref, computed, onMounted } from 'vue'
+
   const routes = {
     '/' : Home,
     '/Projects' : Projects,
     '/Contact' : Contact,
   }
+
   const night = ref(false)
   const colors = computed(
     ()=>{
@@ -29,9 +31,15 @@
       }
     }
   )
+  onMounted(()=>{
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
+    if(darkThemeMq.matches)
+      night.value=true
+  })
   const changeColors = () => {
     night.value = !night.value
   }
+
   const currentPath = ref('#/')
   window.addEventListener('hashchange', ()=>{
     currentPath.value = window.location.hash
