@@ -10,7 +10,9 @@
     '/Projects' : Projects,
     '/Contact' : Contact,
   }
-
+  const changeRoute = () => {
+    
+  }
   const night = ref(false)
   const colors = computed(
     ()=>{
@@ -43,6 +45,7 @@
   const currentPath = ref('#/')
   window.addEventListener('hashchange', ()=>{
     currentPath.value = window.location.hash
+    document.title = 'Nathan Dawit -' + currentPath.value.slice(1).replace('/',' ')
   })
   const currentView = computed(()=>{
     return routes[currentPath.value.slice(1) || '/'] || NotFound
