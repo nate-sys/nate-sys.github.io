@@ -1,11 +1,11 @@
 <script setup>
-  import Home from './Home.vue'
-  import Projects from './Projects.vue'
-  import Contact from './Contact.vue'
-  import NotFound from './NotFound.vue'
+  import Home from '@/components/views/Home.vue'
+  import Projects from '@/components/views/Projects.vue'
+  import Contact from '@/components/views/Contact.vue'
+  import NotFound from '@/components/views/NotFound.vue'
   import { ref, computed } from 'vue'
   const routes = {
-    '/Home' : Home,
+    '/' : Home,
     '/Projects' : Projects,
     '/Contact' : Contact,
   }
@@ -32,7 +32,7 @@
   const changeColors = () => {
     night.value = !night.value
   }
-  const currentPath = ref('#/Home')
+  const currentPath = ref('#/')
   window.addEventListener('hashchange', ()=>{
     currentPath.value = window.location.hash
   })
@@ -44,7 +44,7 @@
 <template>
   <div class='master-container' :style='colors'>
   <nav class='soft-pad colors'>
-    <a class='btn' href='#/Home'><span>./</span>nate<span>-sys</span></a>
+    <a class='btn' href='#/'><span>./</span>nate<span>-sys</span></a>
     <div class='items'>
       <a
       v-for='(_,route) in routes'
