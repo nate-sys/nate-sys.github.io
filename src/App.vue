@@ -45,7 +45,10 @@
   const currentPath = ref('#/')
   window.addEventListener('hashchange', ()=>{
     currentPath.value = window.location.hash
-    document.title = 'Nathan Dawit -' + currentPath.value.slice(1).replace('/',' ')
+    if(currentPath.value != '#/') 
+      document.title = 'Nathan Dawit -' + currentPath.value.slice(1).replace('/',' ') 
+    else
+      document.title = 'Nathan Dawit'
   })
   const currentView = computed(()=>{
     return routes[currentPath.value.slice(1) || '/'] || NotFound
@@ -90,6 +93,7 @@
     margin: 0;
     padding: 0;
     font-family: Helvetica, Sans-serif;
+    overflow: hidden;
   }
   .master-container{
     width: 100vw;
