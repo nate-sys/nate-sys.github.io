@@ -10,47 +10,47 @@
       <button class='btn btn-cta'>
       Download CV
       </button>
-      <button class='btn btn-contact' @click="$emit('contactEmit')">
+      <a href='#/Contact' class='btn btn-contact'>
         Get in touch
-      </button>
+      </a>
     </div>
   </div>
 </template>
 <style scoped>
-.container{
-  display: grid;
-  align-content: center;
-}
-h1{
-  color: var(--primfg);
-}
-.container-cta{
-  display: flex;
-  gap: 1vw;
-}
-.btn{
-  height: 3rem;
-  appearance: none;
-  border: none;
-  border-radius: 2rem;
-  padding: .3rem 1.3rem;
-  cursor: pointer;
-  display: grid;
-  place-content: center;
-  
-}
-.btn-cta{
-  background: var(--accentbg);
-  color: #fff;
-  font-weight: bold;
-}
-.btn-cta:hover{
-  box-shadow: 0 0 .3em 0 #00000022;
-}
-.btn-contact{
-  color: var(--accentfg);
-  font-weight: bold;
-  background: transparent;
-}
+  .container{
+    display: grid;
+    align-content: center;
+  }
+  h1{
+    color: var(--primfg);
+  }
+  .container-cta{
+    display: flex;
+    gap: 1vw;
+  }
+  .btn{
+    height: 3rem;
+    appearance: none;
+    border: none;
+    border-radius: 2rem;
+    padding: .3rem 1.3rem;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    text-decoration: none; 
+  }
+  .btn-cta{
+    background: var(--accentbg);
+    color: #fff;
+    font-weight: bold;
+  }
+  .btn-cta:hover{
+    box-shadow: 0 0 .3em 0 #00000022;
+  }
+  .btn-contact{
+    color: var(--accentfg);
+    font-weight: bold;
+    background: transparent;
+  }
 </style>
 

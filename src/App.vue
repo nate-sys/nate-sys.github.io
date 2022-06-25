@@ -79,7 +79,7 @@
       <component 
       :is='currentView'
       class='view soft-pad'
-      @contact-emit="()=>currentPath='#/Contact'"/>
+      />
     </Transition>
   </main>
   </div>
