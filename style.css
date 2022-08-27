@@ -2,6 +2,11 @@
   box-sizing: border-box;
   font-family: "SpaceMono";
 }
+:root{
+  --bg: #0a0810;
+  --fg: #ffffff;
+  --accent: #fb25ff;
+}
 @font-face{
   font-family: "SpaceMono";
   src: url("./assets/SpaceMono-Regular.ttf");
@@ -12,8 +17,8 @@
 }
 body {
   height: 100vh;
-  background: #0a0810;
-  color: #fff;
+  background: var(--bg);
+  color: var(--fg);
   padding: 0;
   margin: 0;
   display: grid;
@@ -22,7 +27,7 @@ body {
 }
 nav{
   width: 100%;
-  background: #fb25ff;
+  background:  var(--accent);
   height: 3.5rem;
   position: sticky;
   top: 0;
@@ -39,7 +44,7 @@ nav{
 .nav_link{
   font-family: "SpaceMonoBold";
   text-decoration: none;
-  color: #0a0810;
+  color: var(--bg);
 }
 main{
   height: 100%;
@@ -58,13 +63,13 @@ h2 {
 }
 h2::before{
   content: "# ";
-  color: #fb25ff;
+  color: var(--accent);
 }
 ul{
   padding-left: 8ch;
 }
 li{
-  color: #fff;
+  color: var(--fg);
   padding: 0;
   margin: 0;
   list-style-type: "1 drxwr "
